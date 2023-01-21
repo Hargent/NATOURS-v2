@@ -1,0 +1,88 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text: {
+            decoration: none;
+            transform: uppercase;
+        }
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        display: inline-block;
+        transition: all 0.2s;
+        position: relative;
+        // CHANGE FOR THE BUTTON ELEMENT
+        border:none;
+        cursor: pointer;
+    }
+    &:hover {
+        transform: translateY(-0.1875rem);
+        box-shadow: 0 0.625rem 1.25rem $shadow;
+        &::after {
+            transform: scale(1.4, 1.6);
+            opacity: 0;
+        }
+    }
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-0.0625rem);
+        box-shadow: 0.3125rem 0.625rem $shadow;
+    }
+    &::after {
+        content: " ";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
+    }
+}
+
+.btn__white {
+    background-color: $white-color;
+    color: $gray-color;
+    animation: move-in-below 800ms .75s ease-in-out;
+    animation-fill-mode: backwards;
+    &::after {
+        background-color: $white-color;
+        color: $gray-color;
+    }
+}
+
+.btn__green {
+    background-color: $medium-green;
+    color: $white-color;
+    &::after {
+        background-color: $medium-green;
+        color: $white-color;
+    }
+}
+
+.btn__text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $medium-green;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $medium-green;
+        padding: 3px;
+        transition: $default-transition;
+        font-weight: 700;
+    }
+    &:hover {
+        background-color: $medium-green;
+        box-shadow: 0 0.625rem 1.25rem $shadow;
+        color: $white-color;
+        transform: translateY(-2px);
+    }
+    &:active {
+        box-shadow: 0 0.3125rem .625rem $shadow;
+        transform: translateY(0);
+    }
+}

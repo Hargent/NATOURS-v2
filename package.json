@@ -1,0 +1,11 @@
+{
+    "name": "natours",
+    "version": "1.0.0",
+    "description": "landing page of natours",
+    "main": "index.js",
+    "scripts": {
+        "watch:sass": "sass --watch main.scss:main.css"
+    },
+    "author": "Hargent",
+    "license": "ISC"
+}
