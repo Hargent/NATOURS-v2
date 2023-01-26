@@ -30,6 +30,8 @@
 900=>1200px:Tablet landscape 
 1200=>1800px: desktop 
 1800px => +: big desktop
+ORDER: Base ==> Typography ==> General layout 
+==>grid ==> page layout ==> component
 */
 
 @mixin respond($break-point) {

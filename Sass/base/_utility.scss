@@ -4,6 +4,9 @@
 
 .u_margin_bottom_big {
     margin-bottom: 5rem !important;
+    @include respond(portrait) {
+        margin-bottom: 3.125rem !important;
+    }
 }
 
 .u_margin_bottom_small {
@@ -12,6 +15,9 @@
 
 .u_margin_bottom_medium {
     margin-bottom: 2.5rem !important;
+    @include respond(portrait) {
+        margin-bottom: 1.875rem !important;
+    }
 }
 
 .u_margin_top_huge {

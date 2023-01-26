@@ -4,19 +4,25 @@
     padding: 1.5625rem;
     text-align: center;
     border-radius: 3px;
-    transition: all .3s;
+    transition: all 0.3s;
     box-shadow: 0 0.9375rem 2.5rem $shadow;
+    @include respond(portrait) {
+        padding: 1.25rem;
+    }
     &__icon {
         font-size: 3.75rem;
-        margin-bottom: .3125rem;
+        margin-bottom: 0.3125rem;
         color: transparent;
         display: inline-block;
         background: {
-            image: linear-gradient(to right, $light-green 10%, darken($primary-green, 5%));
+            image: linear-gradient( to right, $light-green 10%, darken($primary-green, 5%));
             clip: text;
+        }
+        @include respond(portrait) {
+            margin: 0;
         }
     }
     &:hover {
-        transform: translateY(-.975rem) scale(1.03);
+        transform: translateY(-0.975rem) scale(1.03);
     }
 }
