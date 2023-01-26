@@ -14,8 +14,7 @@
   background-color: #f7f7f7;
   padding: 15.625rem 0;
   margin-top: -20vh;
-  -webkit-clip-path: polygon(0 20vh, 100% 0, 100% 100%, 0 100%);
-          clip-path: polygon(0 20vh, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 20vh, 100% 0, 100% 100%, 0 100%);
 }
 
 .section__features {
@@ -94,17 +93,6 @@ body {
   box-sizing: border-box;
 }
 
-@-webkit-keyframes move-in-below {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateZ(0);
-  }
-}
-
 @keyframes move-in-below {
   0% {
     opacity: 0;
@@ -115,19 +103,6 @@ body {
     transform: translateZ(0);
   }
 }
-@-webkit-keyframes move-in-right {
-  0% {
-    opacity: 0;
-    transform: translateX(20%);
-  }
-  80% {
-    transform: translateX(-2%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 @keyframes move-in-right {
   0% {
     opacity: 0;
@@ -135,19 +110,6 @@ body {
   }
   80% {
     transform: translateX(-2%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@-webkit-keyframes move-in-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-20%);
-  }
-  80% {
-    transform: translateX(2%);
   }
   100% {
     opacity: 1;
@@ -187,16 +149,14 @@ body {
   font-size: 3.75rem;
   font-weight: 400;
   letter-spacing: 2.1875rem;
-  -webkit-animation: move-in-left 800ms ease-in-out;
-          animation: move-in-left 800ms ease-in-out;
+  animation: move-in-left 800ms ease-in-out;
 }
 .header__content__heading__sub {
   display: block;
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 1rem;
-  -webkit-animation: move-in-right 800ms ease-in-out;
-          animation: move-in-right 800ms ease-in-out;
+  animation: move-in-right 800ms ease-in-out;
 }
 
 .heading__secondary {
@@ -292,10 +252,8 @@ body {
 .btn__white {
   background-color: #fff;
   color: #777;
-  -webkit-animation: move-in-below 800ms 0.75s ease-in-out;
-          animation: move-in-below 800ms 0.75s ease-in-out;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
+  animation: move-in-below 800ms 0.75s ease-in-out;
+  animation-fill-mode: backwards;
 }
 .btn__white::after {
   background-color: #fff;
@@ -382,14 +340,14 @@ body {
   color: transparent;
   display: inline-block;
   background-image: linear-gradient(to right, #7ed56f 10%, #2e9e1a);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 .feature__box:hover {
   transform: translateY(-0.975rem) scale(1.03);
 }
 
 .card {
+  -moz-perspective: 93.75rem;
   perspective: 100rem;
   position: relative;
   height: 32.5rem;
@@ -527,6 +485,7 @@ body {
   width: 9.375rem;
   height: 9.375rem;
   float: left;
+  -webkit-shape-outside: circle(50% at 50% 50%);
   shape-outside: circle(50% at 50% 50%);
   -webkit-clip-path: circle(50% at 50% 50%);
   clip-path: circle(50% at 50% 50%);
@@ -574,8 +533,7 @@ body {
 .bg__video__content {
   height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .form__group:not(:last-child) {
@@ -613,16 +571,6 @@ body {
   margin-top: 0.4375rem;
   display: block;
   transition: all 0.3s;
-}
-.form__input:-moz-placeholder-shown + .form__label {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-2.5rem);
-}
-.form__input:-ms-input-placeholder + .form__label {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-2.5rem);
 }
 .form__input:placeholder-shown + .form__label {
   opacity: 0;
@@ -721,6 +669,7 @@ body {
   column-gap: 2.5rem;
   column-rule: 1px solid #999;
   -webkit-hyphens: auto;
+  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
 }
@@ -752,8 +701,7 @@ body {
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
   background-size: cover;
   background-position: top;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
 }
 .header__logo__box {
@@ -982,4 +930,6 @@ body {
 .navigation__checkbox:checked ~ .navigation__button .navigation__icon::after {
   transform: rotate(-135deg);
   top: 0;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
