@@ -8,7 +8,20 @@
 }
 
 html {
-    font-size: 100%;
+    // This defines the value 1rem
+    font-size: 100%; //1 rem == 16px
+    @include respond(landscape) {
+        font-size: 87.5%; //1 rem == 14px
+    }
+    @include respond(portrait) {
+        font-size: 75%; //1 rem == 12px
+    }
+    @include respond(phone) {
+        font-size: 62.5%; //1 rem == 10px
+    }
+    @include respond(big-desktop) {
+        font-size: 125%; // 1 rem ==20px
+    }
 }
 
 body {

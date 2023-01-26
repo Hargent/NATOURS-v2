@@ -3,5 +3,6 @@
         "Hargent",
         "Natours",
         "stylesheet"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
