@@ -88,9 +88,7 @@
                         <p class="tertiary__paragraph">
                             Lorem ipsum dolor sit, amet consectetur adipisicing
                             elit. Blanditiis aspernatur deserunt omnis soluta
-                            accusantium optio repellat, tempore nobis illo
-                            molestiae. Natus sed iste laudantium quisquam
-                            numquam excepturi quos eius commodi.
+                            accusantium optio repellat.
                         </p>
                         <h3 class="tertiary__heading u_margin_botom_small">
                             Live adventures like you never have before
@@ -99,15 +97,24 @@
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Laboriosam ratione, veritatis ullam recusandae
                             perspiciatis deleniti praesentium blanditiis.
-                            Tempore at, tenetur, sapiente est magni sed
-                            aspernatur autem distinctio iusto deserunt corporis.
+                            Tempore at, tenetur.
                         </p>
                         <a href="#" class="btn__text">learn more &rarr;</a>
     </div>
     <div class="composition">
-        <img src="img/nat-1.jpg" alt="photo 1" class="composition__photo composition__photo__p1" />
-        <img src="img/nat-2.jpg" alt="photo 2" class="composition__photo composition__photo__p2" />
-        <img src="img/nat-3.jpg" alt="photo 3" class="composition__photo composition__photo__p3" />
+        <img srcset="
+                                img/nat-1.jpg        300w,
+                                img/nat-1-large.jpg 1000w
+                            " sizes="{max-width : 56.25em} 20vw, {max-width : } 30vw, 18.75em" alt="photo 1" class="composition__photo composition__photo__p1" src="img/nat-1.jpg" />
+
+        <img srcset="
+                                img/nat-2.jpg        300w,
+                                img/nat-2-large.jpg 1000w
+                            " sizes="{max-width : 56.25em} 20vw, {max-width : 37.5em} 30vw, 18.75em" src="img/nat-2.jpg" alt="photo 2" class="composition__photo composition__photo__p2" />
+        <img srcset="
+                                img/nat-3.jpg        300w,
+                                img/nat-3-large.jpg 1000w
+                            " sizes="{max-width : 56.25em} 20vw, {max-width : 37.5em} 30vw, 18.75em" src="img/nat-3.jpg" alt="photo 3" class="composition__photo composition__photo__p3" />
     </div>
     </div>
     </section>
@@ -299,7 +306,7 @@
         <div class="row">
             <div class="story">
                 <figure class="story__shape">
-                    <img src="img/nat-9.jpg" class="story__image" alt="Person on a trip" />
+                    <img srcset="img/nat-9.jpg, img/nat-9.jpg" class="story__image" alt="Person on a trip" />
                     <figcaption class="story__caption">
                         Jack Wilson
                     </figcaption>
@@ -387,7 +394,16 @@
     </main>
     <footer class="footer">
         <div class="footer__logo__box u_center_text u_margin_bottom_big">
-            <img src="img/logo-green-2x.png" alt="Full Logo" class="footer__logo" />
+            <picture class="footer__logo">
+                <source srcset="
+                            img/logo-green-small-1x.png 1x,
+                            img/logo-green-small-1x.png 2x
+                        " media="(max-width: 37.5em)" type="image/png" />
+                <img srcset="
+                            img/logo-green-1x.png 1x,
+                            img/logo-green-2x.png 2x
+                        " alt="Full Logo" />
+            </picture>
         </div>
         <div class="row">
             <div class="col-1-of-2">
