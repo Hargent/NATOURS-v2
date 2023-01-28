@@ -1,135 +1,198 @@
-    .card {
-        ///FUNCTIONALITY
-        -moz-perspective: 93.75rem;
-        perspective: 100rem;
-        position: relative;
+.card {
+    ///FUNCTIONALITY
+    -moz-perspective: 93.75rem;
+    perspective: 100rem;
+    position: relative;
+    height: 32.5rem;
+    &__side {
         height: 32.5rem;
-        &__side {
-            height: 32.50rem;
-            transition: all 1s ease;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            border-radius: 3px;
-            overflow: hidden;
-            box-shadow: 0 0.9375rem 2.5rem rgba(0, 0, 0, 0.15);
-            &__front {
-                background-color: $white-color;
-            }
-            &__back {
-                background-color: transparent;
-                transform: rotateY(180deg);
-            }
+        transition: all 1s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 0.9375rem 2.5rem rgba(0, 0, 0, 0.15);
+        &__front {
+            background-color: $white-color;
         }
-        &:hover &__side__front {
-            transform: rotateY(-180deg);
+        &__back {
+            background-color: transparent;
+            transform: rotateY(180deg);
         }
-        &:hover &__side__back {
-            transform: rotateY(0);
-            &-1 {
-                @include card-gradient($secondary-light-color, $secondary-dark-color)
-            }
-            &-2 {
-                @include card-gradient($light-green, $dark-green)
-            }
-            &-3 {
-                @include card-gradient($tertiary-light-color, $tertiary-dark-color)
-            }
+    }
+    &:hover &__side__front {
+        transform: rotateY(-180deg);
+    }
+    &:hover &__side__back {
+        transform: rotateY(0);
+        &-1 {
+            @include card-gradient( $secondary-light-color, $secondary-dark-color);
         }
-        // FRONT SIDE STYLING
-        &__picture {
+        &-2 {
+            @include card-gradient($light-green, $dark-green);
+        }
+        &-3 {
+            @include card-gradient($tertiary-light-color, $tertiary-dark-color);
+        }
+    }
+    // FRONT SIDE STYLING
+    &__picture {
+        background: {
+            size: cover;
+            blend-mode: color;
+        }
+        height: 14.375rem;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        &-1 {
             background: {
-                size: cover;
-                blend-mode: color;
-            }
-            height: 14.375rem;
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-            border-top-right-radius: 3px;
-            border-top-left-radius: 3px;
-            &-1 {
-                background: {
-                    image: linear-gradient(to right, $secondary-light-color, $secondary-dark-color), url(../../img/nat-5.jpg)
-                }
-            }
-            &-2 {
-                background: {
-                    image: linear-gradient(to right, $light-green, $dark-green), url(../../img/nat-6.jpg)
-                }
-            }
-            &-3 {
-                background: {
-                    image: linear-gradient(to right, $tertiary-light-color, $tertiary-dark-color), url(../../img/nat-7.jpg)
-                }
+                image: linear-gradient( to right, $secondary-light-color, $secondary-dark-color), url(../../img/nat-5.jpg);
             }
         }
-        &__heading {
-            position: absolute;
-            font-size: 1.75rem;
-            font-weight: 300;
-            text-transform: uppercase;
-            color: $white-color;
-            display: inline-block;
-            right: 5%;
-            top: 15%;
-            text-align: right;
-            width: 75%;
-        }
-        &__heading__span {
-            padding: 0.625rem .9375rem;
-            -webkit-box-decoration-break: clone;
-            box-decoration-break: clone;
-            &-1 {
-                background: {
-                    image: linear-gradient(to right, $secondary-light-color, $secondary-dark-color)
-                }
-            }
-            &-2 {
-                background: {
-                    image: linear-gradient(to right, $light-green, $dark-green)
-                }
-            }
-            &-3 {
-                background: {
-                    image: linear-gradient(to right, $tertiary-light-color, $tertiary-dark-color)
-                }
+        &-2 {
+            background: {
+                image: linear-gradient(to right, $light-green, $dark-green), url(../../img/nat-6.jpg);
             }
         }
-        &__details {
-            padding: 1.875rem 0;
-            ul {
-                list-style: none;
-                width: 80%;
-                margin: 0 auto;
-                padding: 0;
-                li {
-                    text-align: center;
-                    font-size: 0.9375rem;
-                    padding: 0.625rem 0;
-                    &:not(:last-child) {
-                        border-bottom: .0625rem solid $gray-color;
-                    }
-                }
-            }
-        }
-        // BACK SIDE STYLING 
-        &__cta {
-            @include center-align();
-        }
-        &__price__box {
-            color: $white-color;
-        }
-        &__price__only {
-            font-size: 0.875rem;
-            text-transform: uppercase;
-        }
-        &__price__value {
-            font: {
-                size: 3.75rem;
-                weight: 100;
+        &-3 {
+            background: {
+                image: linear-gradient( to right, $tertiary-light-color, $tertiary-dark-color), url(../../img/nat-7.jpg);
             }
         }
     }
+    &__heading {
+        position: absolute;
+        font-size: 1.75rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: $white-color;
+        display: inline-block;
+        right: 5%;
+        top: 15%;
+        text-align: right;
+        width: 75%;
+    }
+    &__heading__span {
+        padding: 0.625rem 0.9375rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        &-1 {
+            background: {
+                image: linear-gradient( to right, $secondary-light-color, $secondary-dark-color);
+            }
+        }
+        &-2 {
+            background: {
+                image: linear-gradient(to right, $light-green, $dark-green);
+            }
+        }
+        &-3 {
+            background: {
+                image: linear-gradient( to right, $tertiary-light-color, $tertiary-dark-color);
+            }
+        }
+    }
+    &__details {
+        padding: 1.875rem 0;
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+            padding: 0;
+            li {
+                text-align: center;
+                font-size: 0.9375rem;
+                padding: 0.625rem 0;
+                &:not(:last-child) {
+                    border-bottom: 0.0625rem solid $gray-color;
+                }
+            }
+        }
+    }
+    // BACK SIDE STYLING
+    &__cta {
+        @include center-align();
+    }
+    &__price__box {
+        color: $white-color;
+    }
+    &__price__only {
+        font-size: 0.875rem;
+        text-transform: uppercase;
+    }
+    &__price__value {
+        font: {
+            size: 3.75rem;
+            weight: 100;
+        }
+    }
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    @include respond(portrait) {
+        ///FUNCTIONALITY
+        height: auto;
+        border-radius: 3px;
+        background-color: $white-color;
+        box-shadow: 0 0.9375rem 2.5rem rgba(0, 0, 0, 0.15);
+        &__side {
+            box-shadow: none;
+            border-radius: 0;
+            height: auto;
+            position: relative;
+            &__back {
+                transform: rotateY(0);
+                height: auto;
+                -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+                &-1 {
+                    @include card-gradient( $secondary-light-color, $secondary-dark-color);
+                }
+                &-2 {
+                    @include card-gradient($light-green, $dark-green);
+                }
+                &-3 {
+                    @include card-gradient( $tertiary-light-color, $tertiary-dark-color);
+                }
+            }
+        }
+        &:hover &__side__front {
+            transform: rotateY(0);
+        }
+        &:hover &__side__back {
+            transform: rotateY(0);
+        }
+        &__details {
+            padding: 1rem 1.875rem;
+        }
+        &__cta {
+            position: relative;
+            top: 0%;
+            left: 0;
+            transform: translate(0);
+            text-align: center;
+            padding: 4.375rem 2.5rem;
+        }
+        &__price__box {
+            margin-bottom: 2rem;
+        }
+        &__price__value {
+            font: {
+                size: 2.5rem;
+            }
+        }
+    }
+}

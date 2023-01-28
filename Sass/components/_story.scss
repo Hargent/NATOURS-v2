@@ -2,14 +2,26 @@
     width: 75%;
     margin: 0 auto;
     box-shadow: 0 1.875rem 3.75rem $shadow;
-    background-color: rgba($white-color, .6);
+    background-color: rgba($white-color, 0.6);
     border-radius: 0.1875rem;
     padding: 3.75rem;
     font-size: $default-font-size;
     transform: skewX(-12deg);
     text-align: left;
+    @include respond(portrait) {
+        width: 100%;
+        padding: 2.5rem;
+    }
+    @include respond(phone) {
+        transform: translateX(-7%) skewX(0);
+        width: 100%;
+        padding: 2.5rem;
+    }
     &>* {
         transform: skewX(12deg);
+        @include respond(phone) {
+            transform: skewX(0);
+        }
     }
     &__shape {
         position: relative;
@@ -22,8 +34,6 @@
         clip-path: circle(50% at 50% 50%);
     }
     &__image {
-        // background-size: cover;
-        // width: 100%;
         height: 100%;
         transform: translateX(-2.5rem) scale(1.4);
         -webkit-backface-visibility: hidden;
