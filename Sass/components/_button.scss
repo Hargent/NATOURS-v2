@@ -6,13 +6,13 @@
             decoration: none;
             transform: uppercase;
         }
-        padding: 1rem 2rem;
+        padding: 1rem 1rem;
         border-radius: 2rem;
         display: inline-block;
         transition: all 0.2s;
         position: relative;
         // CHANGE FOR THE BUTTON ELEMENT
-        border:none;
+        border: none;
         cursor: pointer;
     }
     &:hover {
@@ -46,7 +46,7 @@
 .btn__white {
     background-color: $white-color;
     color: $gray-color;
-    animation: move-in-below 800ms .75s ease-in-out;
+    animation: move-in-below 800ms 0.75s ease-in-out;
     animation-fill-mode: backwards;
     &::after {
         background-color: $white-color;
@@ -82,7 +82,7 @@
         transform: translateY(-2px);
     }
     &:active {
-        box-shadow: 0 0.3125rem .625rem $shadow;
+        box-shadow: 0 0.3125rem 0.625rem $shadow;
         transform: translateY(0);
     }
 }

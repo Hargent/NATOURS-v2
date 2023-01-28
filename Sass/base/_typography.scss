@@ -45,12 +45,15 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     display: inline-block;
-    background-image: linear-gradient(to right, $light-green, $dark-green);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
     transition: all 0.2s ease-in-out;
     letter-spacing: 0.125rem;
+    color: $primary-green;
+    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+        background-image: linear-gradient(to right, $light-green, $dark-green);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
     @include respond(portrait) {
         font-size: 1.875rem;
     }
